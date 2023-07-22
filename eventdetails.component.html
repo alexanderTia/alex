@@ -1,0 +1,33 @@
+<!-- event-details.component.html -->
+<style>
+    /* event-details.component.css */
+
+h2 {
+  text-align: center;
+}
+
+.event-details {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.event-details h3 {
+  margin-top: 0;
+}
+
+</style>
+
+<h2>Détails de l'événement</h2>
+
+<div class="event-details">
+  <h3>{{ eventData.titre }}</h3>
+  <p>Date : {{ eventData.date | date:'mediumDate' }}</p>
+  <p>Heure : {{ eventData.heure }}</p>
+  <p>Lieu : {{ eventData.lieu }}</p>
+  <p>Description : {{ eventData.description }}</p>
+  <p>Informations sur le ticket : {{ eventData.infosTicket }}</p>
+</div>
+

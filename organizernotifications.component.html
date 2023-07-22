@@ -1,0 +1,65 @@
+<!-- organizer-dashboard.component.html -->
+<style>
+    /* organizer-dashboard.component.css */
+
+h2 {
+  text-align: center;
+}
+
+.event-stats, .event-list {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.event-list h3 {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+</style>
+<h2>Tableau de bord de l'organisateur</h2>
+
+<div class="event-stats">
+  <h3>Nombre total de participants inscrits : {{ totalParticipants }}</h3>
+</div>
+
+<div class="event-list">
+  <h3>Mes événements</h3>
+  <ul>
+    <li *ngFor="let event of organizerEvents">
+      <p>{{ event.titre }} ({{ event.date | date:'mediumDate' }})</p>
+      <p>Participants inscrits : {{ event.participants }}</p>
+      <button (click)="onEditEvent(event.id)">Modifier</button>
+      <button (click)="onDeleteEvent(event.id)">Supprimer</button>
+    </li>
+  </ul>
+</div>
